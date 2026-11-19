@@ -1,8 +1,8 @@
-# cintel-05-drift-detection
+# cintel-05-drift-detection-custom
 
-[![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/cintel-05-drift-detection/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/cintel-05-drift-detection/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/cintel-05-drift-detection/)
+[![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
+[![CI](https://github.com/dstringer03/cintel-05-drift-detection-custom/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/dstringer03/cintel-05-drift-detection-custom/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://dstringer03.github.io/cintel-05-drift-detection-custom/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
@@ -13,17 +13,15 @@
 
 ## Project Overview
 
-Author: Denise Case
+**Author:** Darrion Maurice Stringer
 
-Date: 2026 October
+**GitHub:**  
+https://github.com/dstringer03
 
-This project introduces drift detection.
+**Repository:**  
+cintel-05-drift-detection-custom
 
-The goal is to compare current measurements against a reference period
-and identify changes that exceed defined thresholds.
-
-The project is configured in
-[pyproject.toml](pyproject.toml).
+This project demonstrates drift detection by comparing current system measurements against historical reference data. The goal is to identify meaningful changes in system behavior that may require further investigation.
 
 ## Data
 
@@ -59,8 +57,7 @@ Explore these project components:
 
 ## Run the Project
 
-Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
-to set up your machine and project environment.
+Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/) to set up your machine and project environment.
 
 From a VS Code terminal in the project root:
 
@@ -70,11 +67,10 @@ uv run python -m cintel.drift_detector
 
 ## Run the Reactive App
 
-From a VS Code terminal in the project root
-(hit CTRL + c to quit):
+From a VS Code terminal in the project root (press CTRL + C to quit):
 
 ```shell
-uv run marimo run  src/cintel/app.py
+uv run marimo run src/cintel/app.py
 ```
 
 ## Results
@@ -83,15 +79,13 @@ The pipeline produces:
 
 - `artifacts/drift_summary.csv` - summary comparisons and drift flags.
 - `artifacts/drift_summary_long.csv` - comparison results in a longer format.
-- `artifacts/drift_stats.csv` - statistical comparison of error rates
+- `artifacts/drift_stats.csv` - statistical comparison of error rates.
 
-Review the differences and drift flags.
-Consider whether the selected thresholds are appropriate
-for the monitored system.
+Review the differences and drift flags. Consider whether the selected thresholds are appropriate for the monitored system.
 
 Successful execution produces a terminal message:
 
-```shell
+```text
 ========================
 Pipeline executed successfully!
 ========================
@@ -99,8 +93,7 @@ Pipeline executed successfully!
 
 A `project.log` file is created in the project root.
 
-This confirms that the Python pipeline executes
-and the logging system works.
+This confirms that the Python pipeline executes and the logging system works.
 
 ## Verification
 
@@ -112,32 +105,28 @@ uv run pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/cintel-05-drift-detection/)
-is published using Zensical and GitHub Pages.
+The [hosted documentation site](https://dstringer03.github.io/cintel-05-drift-detection-custom/) is published using Zensical and GitHub Pages.
 
-The documentation site is used to present the project report,
-covering such sections as data, methods, results, visualizations,
-interpretation, and conclusions.
+The documentation site presents the project report, covering sections such as data, methods, results, visualizations, interpretation, and conclusions.
 
 ## CI/CD and GitHub Actions
 
-This project includes continuous integration and continuous deployment (CI/CD)
-to check project files and publish the docs.
+This project includes continuous integration and continuous deployment (CI/CD) to check project files and publish the documentation.
+
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/cintel-05-drift-detection/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/cintel-05-drift-detection/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/dstringer03/cintel-05-drift-detection-custom/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/dstringer03/cintel-05-drift-detection-custom/actions/workflows/deploy-zensical.yml)
 
 ## Developer Reference
 
-Follow the
-[Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
-for **detailed instructions and troubleshooting**.
+Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/) for detailed instructions and troubleshooting.
 
 ### Initialize and Update the Python Environment
 
 With the project open in VS Code, open a VS Code terminal.
-Paste each command and hit Enter or Return after to run it.
+
+Paste each command and press Enter or Return after each one:
 
 ```shell
 uvx pup-clean --delete
@@ -151,12 +140,9 @@ uv audit
 
 ### Set Up and Run Git Hooks
 
-Set up and run the git hooks to perform
-basic checks automatically before
-any changes get pushed to GitHub.
+Set up and run the Git hooks to perform basic checks automatically before changes get pushed to GitHub.
 
-In the VS Code terminal,
-paste each command and hit Enter or Return after to run it.
+In the VS Code terminal:
 
 ```shell
 uvx prek install --force
@@ -164,14 +150,14 @@ uvx prek update --freeze --cooldown-days 7
 
 git add -A
 uvx prek run --all-files
-# repeat if changes were made
+
+# Repeat if changes were made
 uvx prek run --all-files
 ```
 
 ### Run Common Chores
 
-Run linters, formatters, type checks, tests, and
-build the documentation.
+Run linters, formatters, type checks, tests, and build the documentation.
 
 ```shell
 uv run ruff check . --fix
@@ -188,30 +174,29 @@ After making useful changes, save your work to GitHub.
 
 ```shell
 git add -A
-git commit -m "describe your changes in quotes"
+git commit -m "Describe your changes"
 git push -u origin main
 ```
 
 ## Developer Notes
 
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
+- Use the UP ARROW and DOWN ARROW in the terminal to scroll through past commands.
+- Use CTRL + F to find text within a file.
 
 ## Developer Tools
 
-This project uses professional Python tools to support development,
-testing, documentation, and code quality.
+This project uses professional Python tools to support development, testing, documentation, and code quality.
 
 - [uv](https://docs.astral.sh/uv/) - Python environments and dependencies.
-- [Ruff](https://docs.astral.sh/ruff/) - Python linting and formatting, configured in [.ruff.toml](.ruff.toml).
+- [Ruff](https://docs.astral.sh/ruff/) - Python linting and formatting, configured in `.ruff.toml`.
 - [ty](https://docs.astral.sh/ty/) - Python type checking.
-- [pytest](https://docs.pytest.org/) - automated Python testing, configured in [.pytest.toml](.pytest.toml).
-- [prek](https://prek.j178.dev/) - Git hooks and automated checks, configured in [prek.toml](prek.toml).
-- [Zensical](https://zensical.org/) - project documentation, configured in [zensical.toml](zensical.toml).
+- [pytest](https://docs.pytest.org/) - automated Python testing.
+- [prek](https://prek.j178.dev/) - Git hooks and automated checks.
+- [Zensical](https://zensical.org/) - project documentation.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/cintel-05-drift-detection/)
+- [Hosted Documentation](https://dstringer03.github.io/cintel-05-drift-detection-custom/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
